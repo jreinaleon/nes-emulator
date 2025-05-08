@@ -13,7 +13,12 @@ int main(int argc, char* argv[]) {
     }
 
     init_graphics();
-    init_emulation(argv[1]);
+    emulation_params_t params = {
+        .rom_path = argv[1],
+        .window = window  // Pass the window
+    };
+    init_emulation(params);
+
 
     int quit = 0;
     SDL_Event event;
